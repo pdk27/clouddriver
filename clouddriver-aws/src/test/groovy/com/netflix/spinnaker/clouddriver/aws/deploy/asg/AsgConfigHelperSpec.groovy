@@ -33,9 +33,9 @@ import spock.lang.Unroll
 class AsgConfigHelperSpec extends Specification {
   def securityGroupServiceMock = Mock(SecurityGroupService)
   def deployDefaults = new AwsConfiguration.DeployDefaults()
-  def asgConfig = new AutoScalingWorker.AsgConfiguration(
-      application: "fooTest",
-      stack: "stack")
+  def asgConfig = AutoScalingWorker.AsgConfiguration.builder()
+      .application("fooTest")
+      .stack("stack").build()
 
   void "should return name correctly"() {
     when:

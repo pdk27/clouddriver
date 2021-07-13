@@ -456,7 +456,10 @@ public class LaunchTemplateService {
     request.withNetworkInterfaces(
         new LaunchTemplateInstanceNetworkInterfaceSpecificationRequest()
             .withAssociatePublicIpAddress(asgConfig.getAssociatePublicIpAddress())
-            .withIpv6AddressCount(asgConfig.getAssociateIPv6Address() ? 1 : 0)
+            .withIpv6AddressCount(
+                asgConfig.getAssociateIPv6Address() != null && asgConfig.getAssociateIPv6Address()
+                    ? 1
+                    : 0)
             .withGroups(asgConfig.getSecurityGroups())
             .withDeviceIndex(0));
 

@@ -61,7 +61,7 @@ aws:
 #      all-applications: false
 #      allowed-accounts-regions: account1:region1
 #      allowed-accounts: account1,account2
-#      excluded-applications: ""
+#      excluded-applications: app3
 #      excluded-accounts: account3,account4
   # proxy:
   #  proxyHost: 10.0.0.54
